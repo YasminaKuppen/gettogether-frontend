@@ -1,8 +1,12 @@
 import './Homepage.css'
 
+import homepagephoto from '../../assets/homepagephoto.jpg';
+
 function Homepage() {
     return (
         <>
+            <img src={homepagephoto} alt="People having fun"/>
+
             <h1>getTogether</h1>
             <p> Welkom op de website van getTogether. </p>
             <p> Dankzij deze webapplicatie wordt het organiseren van leuke activiteiten gedurende een weekend of dag weg
