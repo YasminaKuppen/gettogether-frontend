@@ -11,26 +11,7 @@ function Profile() {
     <p> profiel </p>
     <p> profiel </p>
     <p> profiel </p>
-    <p> profiel </p>
-    <p> profiel </p>
-    <p> profiel </p>
-    <p> profiel </p>
-    <p> profiel </p>
-    <p> profiel </p>
-    <p> profiel </p>
-    <p> profiel </p>
-    <p> profiel </p>
-    <p> profiel </p>
-    <p> profiel </p>
-    <p> profiel </p>
-    <p> profiel </p>
-    <p> profiel </p>
-    <p> profiel </p>
-    <p> profiel </p>
-    <p> profiel </p>
-    <p> profiel </p>
-    <p> profiel </p>
-    <p> profiel </p>
+
     <p> profiel </p>
     <p> profiel </p>
     <p> profiel </p>

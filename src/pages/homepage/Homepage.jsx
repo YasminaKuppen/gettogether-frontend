@@ -5,6 +5,7 @@ import homepagephoto from '../../assets/homepagephoto.jpg';
 function Homepage() {
     return (
         <>
+            <div className="homepage">
             <img src={homepagephoto} alt="People having fun"/>
 
             <h1>getTogether</h1>
@@ -21,7 +22,9 @@ function Homepage() {
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Accusantium blanditiis molestias perferendis
                 quae quasi, quisquam temporibus? Doloribus eius exercitationem fuga libero minima minus placeat quisquam
                 saepe suscipit. Ad illum, numquam. </p>
+            </div>
         </>
+
     )
 }
 

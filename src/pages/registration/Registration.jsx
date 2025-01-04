@@ -15,9 +15,9 @@ function Registration() {
     return (
         <div className="registration-container">
             <div className="form-section">
-                <p>Registratie</p>
+                <h3>Registratieformulier</h3>
 
-                {/* Formulier sectie met velden naast elkaar */}
+
                 <div className="two-fields">
                     <div className="input-group">
                         <InputField name="firstname" label="Voornaam" inputType="text" value={firstName}
@@ -60,7 +60,7 @@ function Registration() {
                     </section>
 
                     <section>
-                        <Button type="submit">Versturen</Button>
+                        <Button type="submit">Registreren</Button>
                     </section>
                 </div>
             </div>

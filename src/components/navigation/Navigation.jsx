@@ -1,39 +1,35 @@
 import React from 'react';
 import './Navigation.css'
 import {NavLink, Route} from "react-router-dom";
+import logo from "../../assets/logo.png";
 
 
 function Navigation() {
+
     return (
         <nav>
             <div className="nav-container">
-                <h4>Menu</h4>
-                <ul>
+                <img src={logo} alt="Logo getTogether" className="unique-logo"/>
+                <ul className="nav-list">
+                    <li><NavLink to="/homepage">Homepage</NavLink></li>
+                    <li className="dropdown">
+                        <span className="dropdown-title">Menu</span>
+                        <ul className="dropdown-menu">
+
+                            <li><NavLink to="/registratie">Registreren</NavLink></li>
+                            <li><NavLink to="/profiel">Profiel</NavLink></li>
+                            <li><NavLink to="/activiteit-toevoegen">Activiteit toevoegen</NavLink></li>
+                            <li><NavLink to="/alle-activiteiten">Alle activiteiten</NavLink></li>
+                            <li><NavLink to="/stemmen">Stemmen</NavLink></li>
 
 
-                    <li><NavLink to="/homepage"
-                    >Homepage</NavLink>
+                        </ul>
                     </li>
-                    <li><NavLink to="/activiteit-toevoegen"
-                    >Activiteit toevoegen</NavLink>
-                    </li>
-                    <li><NavLink to="/alle-activiteiten"
-                    >Alle activiteiten</NavLink>
-                    </li>
-                    <li><NavLink to="/profiel"
-                    >Profiel</NavLink>
-                    </li>
-                    <li><NavLink to="/registratie"
-                    >Registreren</NavLink>
-                    </li>
-                    <li><NavLink to="/stemmen"
-                    >Stemmen</NavLink>
-                    </li>
-
 
                 </ul>
             </div>
         </nav>
+
     );
 }
 

@@ -1,4 +1,7 @@
+section {
 
+    padding: 15px;
+}
 .registration-container {
     display: flex;
     justify-content: center;
@@ -13,7 +16,7 @@
     box-sizing: border-box;
     background-color: #D9D0DE;
     border-radius: 8px;
-    box-shadow: 0px 4px 12px rgba(0, 0, 0, 0.1);
+    box-shadow: 10px 10px 12px rgba(0, 0, 0, 0.4);
 
 }
 
@@ -21,7 +24,7 @@
     display: flex;
     flex-direction: column;
     flex: 1;
-    gap: 10px;
+    gap: 20px;
 }
 
 .two-fields {
@@ -29,6 +32,7 @@
     justify-content: space-between;
     gap: 20px;
     flex-wrap: wrap;
+    padding: 10px;
 }
 
 .input-field {

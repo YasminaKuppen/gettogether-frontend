@@ -11,6 +11,7 @@ import Registration from "./pages/registration/Registration.jsx";
 import Vote from "./pages/vote/Vote.jsx";
 import Contact from "./pages/contact/Contact.jsx";
 import Footer from "./components/footer/Footer.jsx";
+import Tiles from "./components/Tiles.jsx";
 
 function App() {
 
@@ -26,7 +27,9 @@ function App() {
                 <Route path="/stemmen" element={<Vote/>}/>
                 <Route path="/contact" element={<Contact/>}/>
                         </Routes>
+<main>
 
+</main>
 <Footer/>
 
                             </>

@@ -1,0 +1,17 @@
+section.activities-page {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    justify-content: center;
+    background-color: #D9D0DE;
+}
+
+section.activities-page > * {
+    flex-basis: calc(33.33% - 20px);
+    flex-grow: 1;
+    max-width: calc(33.33% - 20px);
+}
+
+h3.activities-page {
+    background-color: #D9D0DE;
+}

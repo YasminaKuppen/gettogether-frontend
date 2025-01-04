@@ -11,8 +11,18 @@ img {
    align-items: center;
    justify-content: center;
    text-align: center;
-   width: 94vw;
-   height: 40vw;
+   width: 50vw;
+   height: 30vw;
    object-fit: cover;
+
+}
+
+.homepage {
+   display: flex;
+   flex-direction: column;
+   justify-content: center;
+   align-items: center;
+background-color: #D9D0DE;
+   color: black;
 
 }
