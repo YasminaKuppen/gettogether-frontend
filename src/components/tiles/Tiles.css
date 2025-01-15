@@ -1,0 +1,41 @@
+.tiles-container {
+ display: flex;
+ flex-wrap: wrap;
+ gap: 20px;
+ justify-content: center;
+}
+
+article {
+ background-color: #AF7595;
+ font-size: 18px;
+ height: 200px;
+ overflow: hidden;
+ flex-basis: calc(33.33% - 20px);
+ flex-grow: 1;
+ flex-shrink: 1;
+ display: flex;
+ flex-direction: column;
+ justify-content: center;
+ align-items: center;
+ color: black;
+ box-sizing: border-box;
+}
+
+h4{
+    color: black;
+ background-color: #AF7595;
+}
+article img {
+ width: 25%;
+ height: auto;
+max-height: 50%
+
+}
+
+.moreInfoButton{
+ background-color: #D9D0DE;
+ border: none;
+ border-radius: 5px;
+ padding: 2px;
+ cursor: pointer;
+}

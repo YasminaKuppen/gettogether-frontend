@@ -24,7 +24,7 @@
     top: 100%;
     right: 5px;
     list-style: none;
-    background-color: #AF7595;
+    background-color: #D9D0DE;
     padding: 10px 0;
     margin: 0;
     display: none;
@@ -36,7 +36,7 @@
 }
 
 .dropdown-menu li a {
-    color: white;
+    color: black;
 }
 
 .dropdown:hover .dropdown-menu,
@@ -60,14 +60,13 @@ nav {
    padding: 20px;
 }
 
-nav a,
-nav a:visited {
+nav a{
     text-decoration: none;
     color: white;
 }
 
 nav a:hover {
-    color: #D9D0DE;
+    color: black;
 }
 
 ul {

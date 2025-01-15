@@ -11,20 +11,23 @@ import Registration from "./pages/registration/Registration.jsx";
 import Vote from "./pages/vote/Vote.jsx";
 import Contact from "./pages/contact/Contact.jsx";
 import Footer from "./components/footer/Footer.jsx";
-import Tiles from "./components/Tiles.jsx";
+import Tiles from "./components/tiles/Tiles.jsx";
+import InfoActivity from "./pages/infoActivity/InfoActivity.jsx";
 
 function App() {
 
 
     return (
-        <>        <Navigation/>
+        <>      <Navigation/>
             <Routes>
+                <Route path="/" element={<Homepage/>}/>
                 <Route path="/homepage" element={<Homepage/>}/>
                 <Route path="/activiteit-toevoegen" element={<AddActivity/>}/>
                 <Route path="/alle-activiteiten" element={<AllActivities/>}/>
                 <Route path="/profiel" element={<Profile/>}/>
                 <Route path="/registratie" element={<Registration/>}/>
                 <Route path="/stemmen" element={<Vote/>}/>
+                <Route path="/informatie" element={<InfoActivity/>}/>
                 <Route path="/contact" element={<Contact/>}/>
                         </Routes>
 <main>

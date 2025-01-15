@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import InputField from "../../components/Inputfield.jsx";
-import Button from "../../components/Button.jsx";
+import InputField from "../../components/inputfield/Inputfield.jsx";
+import Button from "../../components/button/Button.jsx";
 import './Registration.css';
 
 function Registration() {
