@@ -1,7 +1,7 @@
 import React from 'react';
 
 
-function InputField({ name, inputType, label, value, changeHandler }) {
+function InputField({name, inputType, label, value, changeHandler}) {
     return (
         <>
             <div className="input-field-container">
@@ -14,8 +14,9 @@ function InputField({ name, inputType, label, value, changeHandler }) {
                     onChange={(e) => changeHandler(e.target.value)}
                     className="input-field"
                 />
-            </div></>
-            );
-            }
+            </div>
+        </>
+    );
+}
 
-            export default InputField;
+export default InputField;

@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import './Profile.css';
 import Tiles from "../../components/tiles/Tiles.jsx";
 import Button from "../../components/button/Button.jsx";
+import {NavLink} from "react-router-dom";
 
 function Profile() {
     // State voor 'about' tekst en uploadstatus
@@ -56,9 +57,9 @@ function Profile() {
 
     return (
         <>
-            <h3 className="profilePage"> Profielpagina</h3>
-            <div className="aboutContainer">
-                <div className="aboutYouAndPhoto">
+            <h3 className="profile-page"> Profielpagina</h3>
+            <div className="about-container">
+                <div className="about-you-and-photo">
                     <h3>Voeg een profielfoto toe</h3>
                     <input
                         type="file"
@@ -111,6 +112,10 @@ function Profile() {
                     <p>details weekend</p>
                     <p>Klik op de activiteit die jou het meeste aanspreekt.</p>
                     <p>Op die pagina kun je vervolgens stemmen.</p>
+                    <p> hier nog een link naar welke weekenden je deelneemt</p>
+                    <NavLink to="/weekend">
+                        Naar mijn weekend
+                    </NavLink>
                 </div>
 
 
@@ -136,7 +141,7 @@ function Profile() {
 
 
                 <section>
-                    <Button id="addActivity">Activiteit toevoegen</Button>
+                    <Button id="add-activity">Activiteit toevoegen</Button>
 
                 </section>
             </section>

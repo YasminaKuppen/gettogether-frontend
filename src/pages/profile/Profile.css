@@ -8,7 +8,7 @@
     background-color: #D9D0DE;
 }
 
-.aboutContainer {
+.about-container {
     background-color: #D9D0DE;
     display: flex;
     flex-direction: row;
@@ -18,7 +18,7 @@
     border: 5px solid silver;
 }
 
-.aboutYouAndPhoto {
+.about-you-and-photo {
     background-color: #D9D0DE;
     display: flex;
     flex-direction: column;
@@ -28,6 +28,6 @@
     border: 3px solid gold;
 }
 
-.profilePage {
+.profile-page {
     background-color: #D9D0DE;
 }

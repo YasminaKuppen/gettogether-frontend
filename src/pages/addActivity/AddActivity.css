@@ -1,8 +1,59 @@
-.addActivityForm{
+section {
+
+    padding: 15px;
+}
+.add-activity-container {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    background-color: #AF7595;
+}
+
+.form-section {
+    width: 33.3%;
+    padding: 20px;
+    box-sizing: border-box;
     background-color: #D9D0DE;
+    border-radius: 8px;
+    box-shadow: 10px 10px 12px rgba(0, 0, 0, 0.4);
 
 }
 
-.addActivityParagraph{
-  padding: 10px;
+.input-group {
+    display: flex;
+    flex-direction: column;
+    flex: 1;
+    gap: 20px;
+}
+
+.two-fields {
+    display: flex;
+    justify-content: space-between;
+    gap: 20px;
+    flex-wrap: wrap;
+    padding: 10px;
+}
+
+.input-field {
+    width: 100%;
+    padding: 10px;
+    font-size: 14px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    background-color: #f9f9f9;
+
+}
+
+.input-label {
+    font-size: 16px;
+    color: #333;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+@media (max-width: 480px) {
+    .form-section {
+        flex-direction: column;
+    }
 }

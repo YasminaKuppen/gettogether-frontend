@@ -1,4 +1,4 @@
-.activityContainer {
+.activity-container {
 
     background-color: #D9D0DE;
     display: flex;
@@ -8,7 +8,7 @@
     gap: 5px;
 }
 
-h3.nameActivity{
+h3.name-activity{
     background-color: #D9D0DE;
 }
 .informationActivity{
@@ -16,7 +16,7 @@ padding: 100px;
     gap: 15px;
 }
 
-.activityPhoto{
+.activity-photo{
 
 }
 .description, .location, .costs {
@@ -25,7 +25,7 @@ padding: 100px;
     gap: 10px;
 }
 
-.descriptionFilled, .locationFilled, .costsFilled {
+.description-filled, .location-filled, .costs-filled {
     border: 1px solid black;
     gap: 10px;
     padding: 15px;

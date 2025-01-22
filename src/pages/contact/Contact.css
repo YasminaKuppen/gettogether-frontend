@@ -1,0 +1,12 @@
+.contact-list {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: #D9D0DE;
+    padding: 20px;
+}
+h3.contact {
+    background-color: #D9D0DE;
+    padding: 20px;
+}

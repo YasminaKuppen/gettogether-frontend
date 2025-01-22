@@ -3,6 +3,7 @@
     margin: 0;
     box-sizing: border-box;
 }
+
 .nav-list > li {
     position: relative;
 }
@@ -57,16 +58,12 @@ nav {
     background-color: black;
     display: flex;
     justify-content: space-between;
-   padding: 20px;
+    padding: 20px;
 }
 
-nav a{
+nav a {
     text-decoration: none;
     color: white;
-}
-
-nav a:hover {
-    color: black;
 }
 
 ul {
@@ -82,10 +79,12 @@ ul {
 h4 {
     color: white;
 }
+
 .unique-logo {
     max-width: 80px;
     max-height: 30px;
 }
+
 @media (max-width: 768px) {
     ul {
         flex-direction: column;

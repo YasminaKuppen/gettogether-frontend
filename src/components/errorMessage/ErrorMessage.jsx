@@ -1,9 +1,9 @@
 import {useEffect} from "react";
 
 
-function ErrorMessage ({ message }) {
+function ErrorMessage({message}) {
     useEffect(() => {
-        return function CleanUp(){
+        return function CleanUp() {
 
         }
     }, []);

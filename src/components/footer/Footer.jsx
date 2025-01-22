@@ -5,17 +5,13 @@ import {NavLink, Route} from "react-router-dom";
 
 function Footer() {
     return (
-<nav>
+        <nav>
             <div className="footer-container">
-
-
-                    <li><NavLink to="/contact-us"
-                    >Contact</NavLink>
-                    </li>
-
-
+                <li><NavLink to="/contact"
+                >Contact</NavLink>
+                </li>
             </div>
-</nav>
+        </nav>
     );
 }
 

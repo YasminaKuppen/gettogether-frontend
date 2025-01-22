@@ -1,5 +1,3 @@
-import {useState} from 'react'
-
 import './App.css'
 import Navigation from "./components/navigation/Navigation.jsx";
 import {Route, Routes} from "react-router-dom";
@@ -8,11 +6,10 @@ import AllActivities from "./pages/allActivities/AllActivities.jsx";
 import Profile from "./pages/profile/Profile.jsx";
 import AddActivity from "./pages/addActivity/AddActivity.jsx";
 import Registration from "./pages/registration/Registration.jsx";
-import Vote from "./pages/vote/Vote.jsx";
 import Contact from "./pages/contact/Contact.jsx";
 import Footer from "./components/footer/Footer.jsx";
-import Tiles from "./components/tiles/Tiles.jsx";
 import InfoActivity from "./pages/infoActivity/InfoActivity.jsx";
+import Weekend from "./pages/weekend/Weekend.jsx";
 
 function App() {
 
@@ -26,17 +23,17 @@ function App() {
                 <Route path="/alle-activiteiten" element={<AllActivities/>}/>
                 <Route path="/profiel" element={<Profile/>}/>
                 <Route path="/registratie" element={<Registration/>}/>
-                <Route path="/stemmen" element={<Vote/>}/>
                 <Route path="/informatie" element={<InfoActivity/>}/>
                 <Route path="/contact" element={<Contact/>}/>
-                        </Routes>
-<main>
+                <Route path="/weekend" element={<Weekend/>}/>
+            </Routes>
+            <main>
 
-</main>
-<Footer/>
+            </main>
+            <Footer/>
 
-                            </>
-                            )
-                        }
+        </>
+    )
+}
 
-                               export default App
+export default App
