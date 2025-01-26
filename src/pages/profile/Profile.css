@@ -18,14 +18,9 @@
     border: 5px solid silver;
 }
 
-.about-you-and-photo {
+.add-activity-button {
     background-color: #D9D0DE;
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    gap: 5px;
-    border: 3px solid gold;
+
 }
 
 .profile-page {

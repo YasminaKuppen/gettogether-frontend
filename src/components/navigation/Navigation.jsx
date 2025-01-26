@@ -9,7 +9,7 @@ function Navigation() {
     return (
         <nav>
             <div className="nav-container">
-                <img src={logo} alt="Logo getTogether" className="unique-logo"/>
+                {/*<img src={logo} alt="Logo getTogether" className="unique-logo"/>*/}
                 <ul className="nav-list">
                     <li><NavLink to="/homepage">Homepage</NavLink></li>
                     <li className="dropdown">

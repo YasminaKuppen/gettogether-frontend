@@ -1,6 +1,23 @@
 #root {
-width: 100%;
+    width: 100%;
 
-  margin: 0 auto;
-  text-align: center;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.app-layout {
+    background: black;
+height: 10vh;
+
+    display: flex;
+    flex-direction: row-reverse;
+    justify-content: space-between; /* Plaatst items aan beide uiteinden van de container */
+    align-items: center; /* Centreert de items verticaal */
+    padding: 0 16px; /* Optioneel: ruimte rondom */
+
+}
+
+main {
+
+    /*height: 100vh;*/
 }

@@ -4,42 +4,55 @@ import Button from "../../components/button/Button.jsx";
 import './Registration.css';
 
 function Registration() {
-    const [firstName, setFirstName] = useState('');
-    const [lastName, setLastName] = useState('');
-    const [age, setAge] = useState('');
-    const [gender, setGender] = useState('');
+    const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
-    const [termsAndConditions, toggleTermsAndConditions] = useState(false);
+    // const [termsAndConditions, toggleTermsAndConditions] = useState(false);
+
+    const handleSubmit = async (event) => {
+        event.preventDefault();
+
+        const data = {
+            username,
+            email,
+            password,
+        };
+
+        try {
+            const response = await fetch('/api/users', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                },
+                body: JSON.stringify(data),
+            });
+
+            if (!response.ok) {
+                throw new Error(`Fout bij versturen: ${response.status}`);
+            }
+
+            const result = await response.json();
+            console.log('Response van server:', result);
+
+            alert('Data succesvol verzonden!');
+        } catch (error) {
+            console.error('Fout:', error);
+            alert('Er ontbreken gegevens of het e-mailadres bevat geen @ of .com/.nl');
+        }
+    };
 
     return (
         <div className="registration-container">
-            <div className="form-section">
+            <form onSubmit={handleSubmit} className="form-section">
                 <h3>Registratieformulier</h3>
 
-
                 <div className="two-fields">
                     <div className="input-group">
-                        <InputField name="firstname" label="Voornaam" inputType="text" value={firstName}
-                                    changeHandler={setFirstName}/>
-                    </div>
-                    <div className="input-group">
-                        <InputField name="lastname" label="Achternaam" inputType="text" value={lastName}
-                                    changeHandler={setLastName}/>
+                        <InputField name="username" label="Gebruikersnaam" inputType="text" value={username}
+                                    changeHandler={setUsername}/>
                     </div>
                 </div>
 
-
-                <div className="two-fields">
-                    <div className="input-group">
-                        <InputField name="birthdate" label="Geboortedatum" inputType="date" value={age}
-                                    changeHandler={setAge}/>
-                    </div>
-                    <div className="input-group">
-                        <InputField name="gender" label="Geslacht" inputType="text" value={gender}
-                                    changeHandler={setGender}/>
-                    </div>
-                </div>
                 <div className="two-fields">
                     <div className="input-group">
                         <InputField name="email" label="E-mailadres" inputType="text" value={email}
@@ -50,21 +63,22 @@ function Registration() {
                                     changeHandler={setPassword}/>
                     </div>
                 </div>
+
+                {/*<section>*/}
+                {/*    <label htmlFor="form-terms-and-conditions">*/}
+                {/*        <input type="checkbox" id="form-terms-and-conditions" name="terms-and-conditions"*/}
+                {/*               checked={termsAndConditions}*/}
+                {/*               onChange={() => toggleTermsAndConditions(!termsAndConditions)}/>*/}
+                {/*        Ik ga akkoord met de voorwaarden*/}
+                {/*    </label>*/}
+                {/*</section>*/}
+
                 <section>
-                    <label htmlFor="form-terms-and-conditions">
-                        <input type="checkbox" id="form-terms-and-conditions" name="terms-and-conditions"
-                               checked={termsAndConditions}
-                                   onChange={() => toggleTermsAndConditions(!termsAndConditions)}/>
-                            Ik ga akkoord met de voorwaarden
-                        </label>
-                    </section>
+                    <Button type="submit">Registreren</Button>
+                </section>
+            </form>
+        </div>
+    );
+}
 
-                    <section>
-                        <Button type="submit">Registreren</Button>
-                    </section>
-                </div>
-            </div>
-            );
-            }
-
-            export default Registration;
+export default Registration;

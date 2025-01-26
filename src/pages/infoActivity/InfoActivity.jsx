@@ -22,7 +22,7 @@ function InfoActivity() {
                     <div className="costs-filled">Hier worden de kosten genoemd
                         <p>$$$</p>
                     </div>
-                    nog een foto vd activiteit ernaast
+
                     <section>
                         <Button id="vote">Stem op deze activiteit</Button>
                     </section>
