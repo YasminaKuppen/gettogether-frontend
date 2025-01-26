@@ -53,25 +53,30 @@ const [users, setUsers] = useState([]);
                 </NavLink>
             </div>
             <section className="add-activity-button">
-                <Button id="add-activity">Activiteit toevoegen</Button>
+                <Button id="add-activity"> <NavLink to="/activiteit-toevoegen">
+                    Activiteit toevoegen
+                </NavLink></Button>
 
             </section>
-
+<div className="activities-and-users-container">
             <section className="activities">
 
                 {activities.map((activity, index) => (
                     <Tiles
                         key={index}
-                        imageAlt={activity.title}
                         activity={activity.title}
                     />
                 ))}
 
             </section>
-            <section className="users">
-                <ListOfUsers users={users}/> {/* Geef de volledige users array door */}
-            </section>
 
+    <section className="users">
+        <h3>Dit zijn de leden in jouw weekend: </h3>
+        <p>
+        <ListOfUsers users={users}/>
+        </p>
+    </section>
+</div>
 
         </>
     )

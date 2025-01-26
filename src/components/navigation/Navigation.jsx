@@ -16,9 +16,10 @@ function Navigation() {
                         <span className="dropdown-title">Menu</span>
                         <ul className="dropdown-menu">
                             <li><NavLink to="/registratie">Registreren</NavLink></li>
+                            <li><NavLink to="/inloggen">Inloggen</NavLink></li>
                             <li><NavLink to="/profiel">Profiel</NavLink></li>
                             <li><NavLink to="/activiteit-toevoegen">Activiteit toevoegen</NavLink></li>
-                            <li><NavLink to="/alle-activiteiten">Alle activiteiten</NavLink></li>
+                            <li><NavLink to="/alle-activiteiten">Pagina van organisator</NavLink></li>
                         </ul>
                     </li>
 

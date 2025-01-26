@@ -16,3 +16,10 @@
 
 .submitButton:hover {opacity: 1}
 
+
+
+a:visited {
+    color: white;
+
+    /* Zorgt ervoor dat bezochte links niet paars worden */
+}

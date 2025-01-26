@@ -1,11 +1,15 @@
 * {
-    box-sizing: border-box;
     margin: 0;
     padding: 0;
+    box-sizing: border-box;
 }
 
-.profile {
+.users {
     background-color: #D9D0DE;
+    display: flex;
+    flex-direction: row;
+    margin: 0;
+    padding: 0;
 }
 
 .about-container {
@@ -25,4 +29,17 @@
 
 .profile-page {
     background-color: #D9D0DE;
+}
+.activities-and-users-container
+{
+    background-color: #D9D0DE;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 0;
+    padding: 0;
+}
+.users{
+    display: flex;
+    flex-direction: column;
 }

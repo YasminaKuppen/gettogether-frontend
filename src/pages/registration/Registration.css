@@ -1,5 +1,10 @@
-section {
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
+section {
     padding: 15px;
 }
 .registration-container {
@@ -17,7 +22,6 @@ section {
     background-color: #D9D0DE;
     border-radius: 8px;
     box-shadow: 10px 10px 12px rgba(0, 0, 0, 0.4);
-
 }
 
 .input-group {
@@ -42,7 +46,6 @@ section {
     border: 1px solid #ccc;
     border-radius: 4px;
     background-color: #f9f9f9;
-
 }
 
 .input-label {

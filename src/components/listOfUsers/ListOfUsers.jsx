@@ -1,12 +1,12 @@
 import React from "react";
-
+import './ListOfUsers.css'
 function ListOfUsers({ users }) {
     return (
         <div className="users-container">
             {users.map((user) => (
-                <article key={user.id}>
-                    <h4>{user.username}</h4> {/* Toon de gebruikersnaam */}
-                </article>
+                <div className="users" key={user.id}>
+                    <li>{user.username}</li>
+                </div>
             ))}
         </div>
     );

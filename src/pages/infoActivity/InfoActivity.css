@@ -1,5 +1,10 @@
-.activity-container {
+*{
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
 
+.activity-container {
     background-color: #D9D0DE;
     display: flex;
     flex-direction: row-reverse;
