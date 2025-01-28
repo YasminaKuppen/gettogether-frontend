@@ -10,6 +10,7 @@
     flex-direction: row;
     margin: 0;
     padding: 0;
+    gap: 5px
 }
 
 .about-container {
@@ -42,4 +43,8 @@
 .users{
     display: flex;
     flex-direction: column;
+}
+
+.logout-button {
+    background-color: #D9D0DE;
 }

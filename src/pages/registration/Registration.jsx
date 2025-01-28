@@ -37,7 +37,7 @@ function Registration() {
             alert('Data succesvol verzonden!');
         } catch (error) {
             console.error('Fout:', error);
-            alert('Er ontbreken gegevens of het e-mailadres bevat geen @ of .com/.nl');
+            alert(error);
         }
     };
 

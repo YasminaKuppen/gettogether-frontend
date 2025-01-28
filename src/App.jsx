@@ -12,6 +12,10 @@ import InfoActivity from "./pages/infoActivity/InfoActivity.jsx";
 import Weekend from "./pages/weekend/Weekend.jsx";
 import Header from "./components/header/Header.jsx";
 import Login from "./pages/login/Login.jsx";
+import AuthContextProvider from "./context/AuthContext.jsx";
+// import Test from "./pages/TestSignIn.jsx";
+
+// import TestSignIn from "./pages/TestSignIn.jsx";
 
 function App() {
 
@@ -22,24 +26,28 @@ function App() {
                 <div className="app-layout">
                     <Navigation/>
                     <Header/></div>
-                <main>
+                <main>          <AuthContextProvider>
                     <Routes>
+
                         <Route path="/" element={<Homepage/>}/>
                         <Route path="/homepage" element={<Homepage/>}/>
                         <Route path="/activiteit-toevoegen" element={<AddActivity/>}/>
                         <Route path="/alle-activiteiten" element={<AllActivities/>}/>
+
                         <Route path="/profiel" element={<Profile/>}/>
                         <Route path="/registratie" element={<Registration/>}/>
                         <Route path="/informatie" element={<InfoActivity/>}/>
                         <Route path="/contact" element={<Contact/>}/>
                         <Route path="/weekend" element={<Weekend/>}/>
+                        {/*<Route path="/testen" element={<TestSignIn/>}/>*/}
                         <Route path="/inloggen" element={<Login/>}/>
-                    </Routes>
 
+                    </Routes>
+                </AuthContextProvider>
                 </main>
              <Footer/>
             </div>
-        </>
+    </>
     )
 }
 

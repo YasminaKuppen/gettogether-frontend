@@ -1,16 +1,18 @@
-import React, {useEffect, useState} from 'react';
+import React, {useContext, useEffect, useState} from 'react';
 import './Profile.css';
 import Tiles from "../../components/tiles/Tiles.jsx";
 import Button from "../../components/button/Button.jsx";
 import {NavLink} from "react-router-dom";
 import axios from "axios";
 import ListOfUsers from "../../components/listOfUsers/ListOfUsers.jsx";
+import LogoutButton from "../../components/button/LogOutButton.jsx";
+import {AuthContext} from "../../context/AuthContext.jsx";
 
 function Profile() {
     const [activities, setActivities] = useState([]);
 const [users, setUsers] = useState([]);
-
-
+    const { isAuth } = useContext(AuthContext);
+    const { logout } = useContext(AuthContext);
     useEffect(() => {
         async function fetchActivities() {
             try {
@@ -38,18 +40,19 @@ const [users, setUsers] = useState([]);
 
         fetchUsers();
     }, []);
+
+    console.log(isAuth);
     return (
         <>
             <h3 className="profile-page"> Profielpagina</h3>
             <div className="about-container">
-
                 <p>Je bent lid van naam groep</p>
                 <p>details weekend</p>
-                <p>Klik op de activiteit die jou het meeste aanspreekt.</p>
-                <p>Op die pagina kun je vervolgens stemmen.</p>
-                <p> hier nog een link naar welke weekenden je deelneemt</p>
+                <p>Klik op de activiteit die jou het meeste aanspreekt.
+                    Op die pagina kun je vervolgens stemmen.</p>
+                <p>Ga naar </p>
                 <NavLink to="/weekend">
-                    Naar mijn weekend
+                    mijn weekend
                 </NavLink>
             </div>
             <section className="add-activity-button">
@@ -58,8 +61,8 @@ const [users, setUsers] = useState([]);
                 </NavLink></Button>
 
             </section>
-<div className="activities-and-users-container">
-            <section className="activities">
+<section className="activities-and-users-container">
+            <div className="activities">
 
                 {activities.map((activity, index) => (
                     <Tiles
@@ -68,16 +71,20 @@ const [users, setUsers] = useState([]);
                     />
                 ))}
 
-            </section>
+            </div>
 
     <section className="users">
-        <h3>Dit zijn de leden in jouw weekend: </h3>
-        <p>
-        <ListOfUsers users={users}/>
-        </p>
-    </section>
-</div>
+        <h3>Dit zijn de leden in jouw weekend:</h3>
+        <div>
+            <ListOfUsers users={users}/>
+        </div>
 
+    </section>
+
+</section>
+            <section className="logout-button">
+            <LogoutButton/>
+            </section>
         </>
     )
         ;

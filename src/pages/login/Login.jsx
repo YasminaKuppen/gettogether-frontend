@@ -1,25 +1,57 @@
 import InputField from "../../components/inputfield/Inputfield.jsx";
-import {useState} from "react";
+import {useContext, useState} from "react";
 import Button from "../../components/button/Button.jsx";
 import './Login.css'
+import {AuthContext} from "../../context/AuthContext.jsx";
+import axios from "axios";
+import { useNavigate } from "react-router-dom";
+//demo
+// function Login() {
+//     const [username, setUsername] = useState("");
+//     const [password, setPassword] = useState("");
+//     const { login } = useContext(AuthContext);
+//
+//
+//     async function handleSubmit(e){
+//         e.preventDefault();
+//         try {
+//             const response = await axios.post('/api/login' ,
+//                 {
+//                     username: "fender",
+//                     password: "fender",
+//                 })
+// console.log(response)
+//             login(response.data.accesToken);
+//         } catch (e) {
+//             console.error('deze foutmelding blijft');
+//         }
+//
+// }
+
+
+//origineel
 function Login() {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
+    const navigate = useNavigate();
     const handleSubmit = async (event) => {
         event.preventDefault();
 
-        const data = {
-            username,
-            password
-
-        };
+        // const data = {
+        //     username,
+        //     password
+        //
+        // };
         try {
             const response = await fetch('/api/login', {
                 method: 'POST',
                 headers: {
                     'Content-Type': 'application/json',
                 },
-                body: JSON.stringify(data),
+                body: JSON.stringify({
+                    username: username,
+                    password: password,
+                }),
             });
 
             if (!response.ok) {
@@ -29,11 +61,26 @@ function Login() {
             const result = await response.json();
             console.log('Response van server:', result);
 
+            // Controleer of er een token is in de response
+            if (result.token) {
+                // Als er een token is, sla het op in localStorage en navigeer naar profiel
+                localStorage.setItem('token', result.token);
+                console.log('Gebruiker is ingelogd. Welkom', username);
+                navigate('/profiel'); // Navigeer naar de profielpagina
+            } else {
+                // Als er geen token is, geef een foutmelding
+                console.error('Geen token ontvangen!');
+                toggleError(true);
+            }
+
+
             alert('Data succesvol verzonden!');
         } catch (error) {
             console.error('Fout:', error.message);
             alert('Gegevens onjuist');
+            toggleError(true);
         }
+
     };
 
     return (
