@@ -1,12 +1,12 @@
 import Tiles from "../../components/tiles/Tiles.jsx";
 import {useState, useEffect} from "react";
-import './AllActivities.css'
-import Button from "../../components/button/Button.jsx";
+import './OrganizerPage.css'
+import Button from "../../components/buttons/Button.jsx";
 import {NavLink} from "react-router-dom";
 import axios from "axios";
 import ListOfUsers from "../../components/listOfUsers/ListOfUsers.jsx";
 
-function AllActivities() {
+function OrganizerPage() {
     const [activities, setActivities] = useState([]);
     const [mostPopularActivities, setMostPopularActivities] = useState([]);
     const [users, setUsers] = useState([]);
@@ -63,6 +63,7 @@ function AllActivities() {
             <h3 className="activities-page">Alle activiteiten</h3>
             <p>Naam weekend</p>
             <p>Beschrijving weekend</p>
+            <p>GROEPSFOTO</p>
             <section className="activities">
                 <NavLink to="/activiteit-toevoegen">
                     <Button id="add-activity">Activiteit toevoegen</Button>
@@ -74,7 +75,7 @@ function AllActivities() {
                     {activities.map((activity, index) => (
                         <Tiles
                             key={index}
-                            activity={activity.title}
+                            activity={activity}
                         />
                     ))}
 
@@ -105,4 +106,4 @@ function AllActivities() {
     );
 }
 
-export default AllActivities;
+export default OrganizerPage;

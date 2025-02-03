@@ -1,3 +1,4 @@
+
 import { createContext, useEffect, useState } from "react";
 import { useNavigate } from "react-router-dom";
 import {jwtDecode} from "jwt-decode"; // Correcte import
@@ -70,8 +71,9 @@ function AuthContextProvider({ children }) {
     }
 
     function logout() {
-        console.log("Gebruiker is uitgelogd");
+
         localStorage.removeItem("token");
+        console.log("Gebruiker is uitgelogd");
         setAuth({
             isAuth: false,
             user: null,
@@ -208,97 +210,5 @@ export default AuthContextProvider;
 // AuthContextProvider.propTypes = {
 //     children: PropTypes.node.isRequired,
 // };
-//
-// export default AuthContextProvider;
-
-// origineel
-// import {createContext, useEffect, useState} from "react";
-// import {useNavigate} from "react-router-dom";
-// import {jwtDecode} from "jwt-decode"; // Correcte import
-// import axios from "axios";
-// import isTokenValid from "../helpers/isTokenValid.js";
-// import PropTypes from "prop-types";
-//
-// export const AuthContext = createContext({});
-//
-// function AuthContextProvider({children}) {
-//     const [auth, setAuth] = useState({
-//         isAuth: false,
-//         user: null,
-//     });
-//     const navigate = useNavigate();
-//     useEffect(() => {
-//         const token = localStorage.getItem("token");
-//         if (token && isTokenValid(token)) {
-//             void login(token);
-//         } else {
-//             setAuth({
-//                 isAuth: false,
-//                 user: null,
-//                 status: "done",
-//             })
-//         }
-//     }, []);
-//
-//     async function login(token) {
-//         const decodedToken = jwtDecode(token);
-//
-//         try {
-//             const response = await axios.get(`api/users/${decodedToken.sub}`, {
-//                 headers: {
-//                     "Content-Type": "application/json",
-//                     Authorization: `Bearer ${token}`,
-//                 }
-//             });
-//             console.log("Gebruikersdata:", response.data);
-//
-//
-//             setAuth({
-//                 isAuth: true,
-//                 user: {
-//                     username: response.data.username,
-//                     id: response.data.id,
-//                 },
-//                 status: "done"
-//             });
-//
-//             console.log("Gebruiker is ingelogd");
-//             navigate("/profiel"); // Navigeer naar profielpagina
-//         } catch (error) {
-//             console.error("Fout tijdens login:", error);
-//             alert("Login mislukt. Controleer je gegevens.");
-//         }
-//     }
-//
-//     function logout() {
-//         console.log("Gebruiker is uitgelogd");
-//
-//         // Verwijder de token en reset de auth-status
-//         localStorage.removeItem("token");
-//         setAuth({
-//             isAuth: false,
-//             user: null,
-//         });
-//
-//         navigate("/"); // Navigeer naar de startpagina
-//     }
-//
-//     // Zorg dat de context de volledige auth-state en functies bevat
-//     const contextData = {
-//         auth, // Toegang tot de volledige auth-state
-//         login,
-//         logout,
-//     };
-//
-//     return (
-//         <AuthContext.Provider value={contextData}>
-//             {auth.status === 'done' ? children : <p>Loading..</p>}
-//         </AuthContext.Provider>
-//     );
-// }
-//
-// AuthContextProvider.propTypes = {
-//     children: PropTypes.node.isRequired,
-// }
 //
 // export default AuthContextProvider;

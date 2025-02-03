@@ -1,12 +1,15 @@
 import React, { useState } from "react";
 import InputField from "../../components/inputfield/Inputfield.jsx";
-import Button from "../../components/button/Button.jsx";
+import Button from "../../components/buttons/Button.jsx";
 import './Registration.css';
+import {useNavigate} from "react-router-dom";
 
 function Registration() {
     const [username, setUsername] = useState('');
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
+    const navigate = useNavigate();
+
     // const [termsAndConditions, toggleTermsAndConditions] = useState(false);
 
     const handleSubmit = async (event) => {
@@ -34,7 +37,10 @@ function Registration() {
             const result = await response.json();
             console.log('Response van server:', result);
 
-            alert('Data succesvol verzonden!');
+            alert('Registratie succesvol! Je wordt doorgestuurd naar de inlogpagina.');
+
+            navigate('/inloggen');
+
         } catch (error) {
             console.error('Fout:', error);
             alert(error);

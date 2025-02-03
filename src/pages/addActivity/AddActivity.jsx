@@ -1,6 +1,6 @@
 import React, {useState} from "react";
 import InputField from "../../components/inputfield/Inputfield.jsx";
-import Button from "../../components/button/Button.jsx";
+import Button from "../../components/buttons/Button.jsx";
 import './AddActivity.css';
 
 function AddActivity() {
@@ -8,16 +8,22 @@ function AddActivity() {
     const [description, setDescription] = useState("");
     const [location, setLocation] = useState('');
     const [costs, setCosts] = useState('');
+    const userId = localStorage.getItem("id");
+    // const [image, setImage] = useState(null);
+//
     // const [termsAndConditions, toggleTermsAndConditions] = useState(false);
 
     const handleSubmit = async (event) => {
         event.preventDefault();
 
         const data = {
-          title,
+            title,
             description,
+      /*      image,*/
             location,
-            costs
+            costs,
+        addedBy: {id: userId},
+            weekend: {id: 1}
         };
 
         try {
@@ -42,46 +48,62 @@ function AddActivity() {
             alert('Er ontbreken gegevens');
         }
     };
+    // const handleImageChange = (event) => {
+    //     const file = event.target.files[0];
+    //     if (file) {
+    //         const imageUrl = URL.createObjectURL(file);
+    //         setImage(imageUrl);
+    //     }
+    // };
 
 
     return (
         <div className="add-activity-container">
             <form onSubmit={handleSubmit} className="form-section">
 
-                    <h3>Activiteit toevoegen</h3>
+                <h3>Activiteit toevoegen</h3>
 
 
-                    <div className="two-fields">
-                        <div className="input-group">
-                            <InputField name="title" label="Naam activiteit" inputType="text"
-                                        value={title}
-                                        changeHandler={setTitle}/>
-                        </div>
-                        <div className="input-group">
-                            <InputField name="description" label="Beschrijving" inputType="text"
-                                        value={description}
-                                        changeHandler={setDescription}/>
-                        </div>
+                <div className="two-fields">
+                    <div className="input-group">
+                        <InputField name="title" label="Naam activiteit" inputType="text"
+                                    value={title}
+                                    changeHandler={setTitle}/>
                     </div>
-                    <div className="two-fields">
-                        <div className="input-group">
-                            <InputField name="location" label="Locatie" inputType="location"
-                                        value={location}
-                                        changeHandler={setLocation}/>
-                        </div>
-                        <div className="input-group">
-                            <InputField name="costs" label="Kosten" inputType="text" value={costs}
-                                        changeHandler={setCosts}/>
-                        </div>
+                    <div className="input-group">
+                        <InputField name="description" label="Beschrijving" inputType="text"
+                                    value={description}
+                                    changeHandler={setDescription}/>
                     </div>
+                    {/*<div>*/}
+                    {/*    <p>Voeg een foto toe van de activiteit</p>*/}
+                    {/*    <input*/}
+                    {/*        type="file"*/}
+                    {/*        accept="image/*"*/}
+                    {/*        onChange={handleImageChange}*/}
+                    {/*    />*/}
+                    {/*</div>*/}
+
+                </div>
+                <div className="two-fields">
+                    <div className="input-group">
+                        <InputField name="location" label="Locatie" inputType="location"
+                                    value={location}
+                                    changeHandler={setLocation}/>
+                    </div>
+                    <div className="input-group">
+                        <InputField name="costs" label="Kosten" inputType="text" value={costs}
+                                    changeHandler={setCosts}/>
+                    </div>
+                </div>
 
 
-                    <section>
-                        <Button type="submit">Activiteit toevoegen</Button>
-                    </section>
+                <section>
+                    <Button type="submit">Activiteit toevoegen</Button>
+                </section>
             </form>
         </div>
-);
+    );
 }
 
 export default AddActivity;

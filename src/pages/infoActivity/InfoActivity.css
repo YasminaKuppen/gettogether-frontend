@@ -1,4 +1,4 @@
-*{
+* {
     box-sizing: border-box;
     margin: 0;
     padding: 0;
@@ -13,17 +13,19 @@
     gap: 5px;
 }
 
-h3.name-activity{
+h3.name-activity {
     background-color: #D9D0DE;
 }
-.informationActivity{
-padding: 100px;
+
+.informationActivity {
+    padding: 100px;
     gap: 15px;
 }
 
-.activity-photo{
+.activity-photo {
 
 }
+
 .description, .location, .costs {
     border: 1px solid black;
     background-color: #AF7595;
@@ -35,4 +37,29 @@ padding: 100px;
     gap: 10px;
     padding: 15px;
     margin: 0 0 15px 0;
+}
+
+.info-activity-button {
+    background-color: #AF7595;
+    border: none;
+    color: white;
+    padding: 16px 32px;
+    text-align: center;
+    font-size: 16px;
+    margin: 4px 2px;
+    opacity: 0.6;
+    transition: 0.3s;
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+
+}
+
+.info-activity-button:hover {
+    opacity: 1
+}
+
+a:visited {
+    color: white;
+
 }

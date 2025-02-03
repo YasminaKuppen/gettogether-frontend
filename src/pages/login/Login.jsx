@@ -1,35 +1,12 @@
 import InputField from "../../components/inputfield/Inputfield.jsx";
 import {useContext, useState} from "react";
-import Button from "../../components/button/Button.jsx";
+import Button from "../../components/buttons/Button.jsx";
 import './Login.css'
 import {AuthContext} from "../../context/AuthContext.jsx";
 import axios from "axios";
 import { useNavigate } from "react-router-dom";
-//demo
-// function Login() {
-//     const [username, setUsername] = useState("");
-//     const [password, setPassword] = useState("");
-//     const { login } = useContext(AuthContext);
-//
-//
-//     async function handleSubmit(e){
-//         e.preventDefault();
-//         try {
-//             const response = await axios.post('/api/login' ,
-//                 {
-//                     username: "fender",
-//                     password: "fender",
-//                 })
-// console.log(response)
-//             login(response.data.accesToken);
-//         } catch (e) {
-//             console.error('deze foutmelding blijft');
-//         }
-//
-// }
 
 
-//origineel
 function Login() {
     const [username, setUsername] = useState("");
     const [password, setPassword] = useState("");
@@ -37,11 +14,11 @@ function Login() {
     const handleSubmit = async (event) => {
         event.preventDefault();
 
-        // const data = {
-        //     username,
-        //     password
-        //
-        // };
+        const contextData = {
+            username,
+            password
+        };
+        console.log("Context data:", contextData);
         try {
             const response = await fetch('/api/login', {
                 method: 'POST',
@@ -61,14 +38,16 @@ function Login() {
             const result = await response.json();
             console.log('Response van server:', result);
 
-            // Controleer of er een token is in de response
+
             if (result.token) {
-                // Als er een token is, sla het op in localStorage en navigeer naar profiel
+
                 localStorage.setItem('token', result.token);
+                localStorage.setItem('id', result.userId);
+                console.log(result)
                 console.log('Gebruiker is ingelogd. Welkom', username);
-                navigate('/profiel'); // Navigeer naar de profielpagina
+                navigate('/profiel');
             } else {
-                // Als er geen token is, geef een foutmelding
+
                 console.error('Geen token ontvangen!');
                 toggleError(true);
             }
